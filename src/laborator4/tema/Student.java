@@ -19,12 +19,12 @@ public class Student {
         this.materiiStudent = student.materiiStudent;
     }
 
-    public int averageGrade() {
+    public float averageGrade() {
         int suma = 0;
         for (Integer nota : materiiStudent.values()) {
             suma += nota;
         }
-        Integer medie = suma / materiiStudent.size();
+        float medie = (float) suma / materiiStudent.size();
         return medie;
     }
 

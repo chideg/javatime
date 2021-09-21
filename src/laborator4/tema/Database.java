@@ -1,8 +1,6 @@
 package laborator4.tema;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Database {
     List<Student> studentsList = new ArrayList<>();
@@ -10,9 +8,9 @@ public class Database {
 
     List<Student> findAllStudents() {
         HashMap<String, Integer> materiiCostin = new HashMap<String, Integer>();
-        materiiCostin.put("Matematica", 10);
-        materiiCostin.put("Fizica", 10);
-        materiiCostin.put("Chimie", 10);
+        materiiCostin.put("Matematica", 5);
+        materiiCostin.put("Fizica", 5);
+        materiiCostin.put("Chimie", 5);
 
         Student student1 = new Student("Hideg", "Costin", materiiCostin);
 
@@ -71,16 +69,27 @@ public class Database {
     }
 
 //    Display studentsList sorted by average grade
-//    ArrayList<Student> getStudentsByAverageGrade() {
-//        return ;
-//    }
+    LinkedList<Student> getStudentsByAverageGrade(List <Student> allStudents) {
+        TreeMap<Float, Student> map = new TreeMap<>();
+        for (Student student: allStudents) {
+            map.put(student.averageGrade(), student);
+        }
+        LinkedList<Student> sortedByAverageGrade = new LinkedList<>();
+        map.forEach((k,v) -> {
+//            System.out.println(k);
+            sortedByAverageGrade.add(v);
+        });
+
+        return sortedByAverageGrade;
+    }
 
     public static void main(String[] args) {
         Database database = new Database();
-        System.out.println(database.findAllStudents());
-        System.out.println(database.findAllTeachers());
-        System.out.println(database.getStudentsBySubject("Fizica"));
-        System.out.println(database.findTeachersBySubject("Chimie"));
+//        System.out.println(database.findAllStudents());
+//        System.out.println(database.findAllTeachers());
+//        System.out.println(database.getStudentsBySubject("Fizica"));
+//        System.out.println(database.findTeachersBySubject("Chimie"));
+        System.out.println(database.getStudentsByAverageGrade(database.findAllStudents()));
     }
 
 
