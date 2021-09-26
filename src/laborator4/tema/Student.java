@@ -1,8 +1,9 @@
 package laborator4.tema;
 
+import javax.xml.crypto.Data;
 import java.util.*;
 
-public class Student {
+public class Student{
     private String nume;
     private String prenume;
     private HashMap<String, Integer> materiiStudent;
@@ -28,8 +29,8 @@ public class Student {
         return medie;
     }
 
-    String getGradeForSubject(String materie) {
-        return "Studentul " + nume + " " + prenume + " pentru materia " + materie + " are nota: " + materiiStudent.get(materie);
+    int getGradeForSubject(String materie) {
+        return materiiStudent.get(materie);
     }
 
     public HashMap<String, Integer> getMateriiStudent() {
@@ -56,6 +57,32 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(nume, prenume, getMateriiStudent());
+    }
+
+    Database database = new Database();
+
+    public ArrayList<Teacher> getAllTeachers() {
+        return database.findAllTeachers();
+    }
+
+    public ArrayList<Teacher> getTeachersBySubject(String subject) {
+        return database.findTeachersBySubject(subject);
+    }
+
+    public ArrayList<Student> getAllStudents() {
+        return database.findAllStudents();
+    }
+
+    public ArrayList<Student> getStudentsBySubject(String subject) {
+        return database.getStudentsBySubject(subject);
+    }
+
+    public LinkedList<Student> getStudentsByAverageGrade() {
+        return database.getStudentsByAverageGrade(database.findAllStudents());
+    }
+
+    public LinkedList<Student> getStudentsByGradeForSubject(String subject) {
+        return database.getStudentsByGradeForSubject(subject);
     }
 
 }
