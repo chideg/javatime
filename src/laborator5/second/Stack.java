@@ -32,6 +32,12 @@ public class Stack implements Container {
 
     @Override
     public void transferFrom(Container container) {
-        Container newContainer = container;
+        ArrayList newContainer = new ArrayList(taskList);
     }
+
+    public ArrayList<Task> getTasks() {
+        return taskList;
+    }
+
+
 }

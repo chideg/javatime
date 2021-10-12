@@ -10,6 +10,5 @@ public class CounterOutTask implements Task{
 
     @Override
     public void execute() {
-
     }
 }
