@@ -39,5 +39,4 @@ public class Stack implements Container {
         return taskList;
     }
 
-
 }

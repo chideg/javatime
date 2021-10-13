@@ -1,6 +1,8 @@
 package laborator5;
 
 import laborator5.first.*;
+import laborator5.second.Queue;
+import laborator5.second.Stack;
 
 public class Main {
 
@@ -35,6 +37,7 @@ public class Main {
         for (Task task : q.getTasks()) {
             task.execute();
         }
+        System.out.println(q.size());
 
         System.out.println("----> Stack");
         Stack s = new Stack();
@@ -49,61 +52,61 @@ public class Main {
 
         System.out.println("----> Testare metoda transferFrom");
         q.transferFrom(s);
-
         for (Task task : q.getTasks()) {
             task.execute();
         }
-
+        System.out.println(q.size());
+        System.out.println(s.size());
         System.out.println(s.isEmpty()); //trebuie sa afiseze true
     }
 
-    static private void test3() {
-        Operation op = new Operation(13);
-        op.div(0);
-        op.div(1);
-        System.out.println(op.getNumber()); //13
-        op.mult(2);
-        System.out.println(op.getNumber());  //26
-        op.minus(3);
-        System.out.println(op.getNumber());  //23
-        op.plus(7);
-        System.out.println(op.getNumber()); //30
-    }
-
-
-    private static void test4() {
-        Song song1 = new Song("Bad", 101, "Michael Jackson");
-        Song song2 = new Song("Dangerous", 19, "Michael Jackson");
-        Song song3 = new Song("Heal the world", 53, "Composer");
-        Song song4 = new Song("Thriller", 82, "Michael Jackson" );
-        Song song5 = new Song("Beat it", 83, "Michel Jakson");
-        Song song6 = new Song("Smooth Criminal", 77, "Composer");
-
-        DangerousAlbum dangerous = new DangerousAlbum();
-        dangerous.addSong(song2);
-        dangerous.addSong(song3);
-        dangerous.addSong(song6);
-        System.out.println(dangerous);
-
-        ThrillerAlbum thriller = new ThrillerAlbum();
-        thriller.addSong(song4);
-        thriller.addSong(song6);
-        thriller.addSong(song5);
-        System.out.println(thriller);
-
-        BadAlbum bad = new BadAlbum();
-        bad.addSong(song1);
-        bad.addSong(song6);
-        System.out.println(bad);
-    }
+//    static private void test3() {
+//        Operation op = new Operation(13);
+//        op.div(0);
+//        op.div(1);
+//        System.out.println(op.getNumber()); //13
+//        op.mult(2);
+//        System.out.println(op.getNumber());  //26
+//        op.minus(3);
+//        System.out.println(op.getNumber());  //23
+//        op.plus(7);
+//        System.out.println(op.getNumber()); //30
+//    }
+//
+//
+//    private static void test4() {
+//        Song song1 = new Song("Bad", 101, "Michael Jackson");
+//        Song song2 = new Song("Dangerous", 19, "Michael Jackson");
+//        Song song3 = new Song("Heal the world", 53, "Composer");
+//        Song song4 = new Song("Thriller", 82, "Michael Jackson" );
+//        Song song5 = new Song("Beat it", 83, "Michel Jakson");
+//        Song song6 = new Song("Smooth Criminal", 77, "Composer");
+//
+//        DangerousAlbum dangerous = new DangerousAlbum();
+//        dangerous.addSong(song2);
+//        dangerous.addSong(song3);
+//        dangerous.addSong(song6);
+//        System.out.println(dangerous);
+//
+//        ThrillerAlbum thriller = new ThrillerAlbum();
+//        thriller.addSong(song4);
+//        thriller.addSong(song6);
+//        thriller.addSong(song5);
+//        System.out.println(thriller);
+//
+//        BadAlbum bad = new BadAlbum();
+//        bad.addSong(song1);
+//        bad.addSong(song6);
+//        System.out.println(bad);
+//    }
 
     public static void main(String[] args) {
         test1();
         System.out.println("------\tTEST EX 1 FINISHED\t------");
 
-//        test2();
-//        System.out.println("------\tTEST EX 2 FINISHED\t------");
-//
+        test2();
+        System.out.println("------\tTEST EX 2 FINISHED\t------");
+
 //        test3();
 //        System.out.println("------\tTEST EX 3 FINISHED\t------");
 //

@@ -11,6 +11,5 @@ public class RandomOutTask implements Task{
 
     @Override
     public void execute() {
-
     }
 }

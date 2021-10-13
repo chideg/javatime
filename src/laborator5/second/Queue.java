@@ -4,7 +4,7 @@ import laborator5.first.Task;
 
 import java.util.ArrayList;
 
-public class Queue implements Container{
+public class Queue implements Container {
     ArrayList<Task> taskList = new ArrayList<>();
 
     @Override
@@ -32,7 +32,9 @@ public class Queue implements Container{
 
     @Override
     public void transferFrom(Container container) {
-        ArrayList newContainer = new ArrayList(taskList);
+            taskList.addAll(container.getTasks());
+//            System.out.println(container.size());
+            container.getTasks().removeAll(taskList);
     }
 
     public ArrayList<Task> getTasks() {
