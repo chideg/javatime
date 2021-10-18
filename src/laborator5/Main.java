@@ -10,20 +10,20 @@ import laborator5.third.Operation;
 
 public class Main {
 
-//    private static final int TASK_NO = 6;
-//
-//    private static Task[] taskList;
+    private static final int TASK_NO = 6;
 
-//    static {
-//        taskList = new Task[TASK_NO];
-//
-//        taskList[0] = new OutTask("First message task");
-//        taskList[1] = new RandomOutTask();
-//        taskList[2] = new CounterOutTask();
-//        taskList[3] = new OutTask("Second message task");
-//        taskList[4] = new CounterOutTask();
-//        taskList[5] = new RandomOutTask();
-//    }
+    private static Task[] taskList;
+
+    static {
+        taskList = new Task[TASK_NO];
+
+        taskList[0] = new OutTask("First message task");
+        taskList[1] = new RandomOutTask();
+        taskList[2] = new CounterOutTask();
+        taskList[3] = new OutTask("Second message task");
+        taskList[4] = new CounterOutTask();
+        taskList[5] = new RandomOutTask();
+    }
 
 //    private static void test1() {
 //
@@ -37,69 +37,69 @@ public class Main {
 //        testStack();
 //    }
 
-//    private static void testStack() {
-//        System.out.println("----> Stack");
-//        StackArray s = new StackArray();
-////        Stack s = new Stack();
-//        fillContainer(s);
-//        System.out.println(s.size());
-//        executeTasks(s);
-//        System.out.println(s.size());
-//        System.out.println("----> End testStack");
-//        System.out.println("----> Start Testare metoda transferFrom");
-//        QueueArray q = new QueueArray();
-//        fillContainer(s);
-//        q.transferFrom(s);
-//        executeTasks(q);
-//        System.out.println("Q size: " + q.size());
-//        System.out.println("S size: " + s.size());
-//        System.out.println(s.isEmpty()); //trebuie sa afiseze true
-//        System.out.println("----> End Testare metoda transferFrom");
-//
-//    }
-//
-////    private static Queue testQueue() {
-//    private static QueueArray testQueue() {
-//        System.out.println("----> Queue");
-////        Queue q = new Queue();
-//        QueueArray q = new QueueArray();
-//        fillContainer(q);
-//        System.out.println(q.size());
-//        executeTasks(q);
-//
-//        System.out.println(q.size());
-//
-//        System.out.println("----> End testQueue");
-//        return q;
-//    }
-//
-//    private static void executeTasks(Container container) {
-//        Task task = container.pop();
-//
-//        while (task != null) {
-//            task.execute();
-//            task = container.pop();
-//        }
-//    }
-//
-//    private static void fillContainer(Container container) {
-//        for(Task task : taskList) {
-//            container.push(task);
-//        }
-//    }
-//
-//    static private void test3() {
-//        Operation op = new Operation(13);
-//        op.div(0);
-//        op.div(1);
-//        System.out.println(op.getNumber()); //13
-//        op.mult(2);
-//        System.out.println(op.getNumber());  //26
-//        op.minus(3);
-//        System.out.println(op.getNumber());  //23
-//        op.plus(7);
-//        System.out.println(op.getNumber()); //30
-//    }
+    private static void testStack() {
+        System.out.println("----> Stack");
+        StackArray s = new StackArray();
+//        Stack s = new Stack();
+        fillContainer(s);
+        System.out.println(s.size());
+        executeTasks(s);
+        System.out.println(s.size());
+        System.out.println("----> End testStack");
+        System.out.println("----> Start Testare metoda transferFrom");
+        QueueArray q = new QueueArray();
+        fillContainer(s);
+        q.transferFrom(s);
+        executeTasks(q);
+        System.out.println("Q size: " + q.size());
+        System.out.println("S size: " + s.size());
+        System.out.println(s.isEmpty()); //trebuie sa afiseze true
+        System.out.println("----> End Testare metoda transferFrom");
+
+    }
+
+//    private static Queue testQueue() {
+    private static QueueArray testQueue() {
+        System.out.println("----> Queue");
+//        Queue q = new Queue();
+        QueueArray q = new QueueArray();
+        fillContainer(q);
+        System.out.println(q.size());
+        executeTasks(q);
+
+        System.out.println(q.size());
+
+        System.out.println("----> End testQueue");
+        return q;
+    }
+
+    private static void executeTasks(Container container) {
+        Task task = container.pop();
+
+        while (task != null) {
+            task.execute();
+            task = container.pop();
+        }
+    }
+
+    private static void fillContainer(Container container) {
+        for(Task task : taskList) {
+            container.push(task);
+        }
+    }
+
+    static private void test3() {
+        Operation op = new Operation(13);
+        op.div(0);
+        op.div(1);
+        System.out.println(op.getNumber()); //13
+        op.mult(2);
+        System.out.println(op.getNumber());  //26
+        op.minus(3);
+        System.out.println(op.getNumber());  //23
+        op.plus(7);
+        System.out.println(op.getNumber()); //30
+    }
 
 
     private static void test4() {
@@ -129,15 +129,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        testQueue();
-//        testStack();
+        testQueue();
+        testStack();
 
 //        test2();
-//        System.out.println("------\tTEST EX 2 FINISHED\t------");
+        System.out.println("------\tTEST EX 2 FINISHED\t------");
 
-//        test3();
-//        System.out.println("------\tTEST EX 3 FINISHED\t------");
-//
+        test3();
+        System.out.println("------\tTEST EX 3 FINISHED\t------");
+
         test4();
         System.out.println("------\tTEST EX 4 FINISHED\t------");
     }
