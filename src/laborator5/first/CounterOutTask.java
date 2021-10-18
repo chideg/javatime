@@ -5,10 +5,10 @@ public class CounterOutTask implements Task{
 
     public CounterOutTask() {
         globalCounter++;
-        System.out.println(globalCounter);
     }
 
     @Override
     public void execute() {
+        System.out.println("Executing CounterOutTask with globalCounter: " + globalCounter);
     }
 }

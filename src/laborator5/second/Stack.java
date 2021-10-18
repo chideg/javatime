@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Stack implements Container {
     ArrayList<Task> taskList = new ArrayList<>();
-
+//    Task[] taskList = new Task[10];
     @Override
     public Task pop() {
         if (!taskList.isEmpty()) {

@@ -44,7 +44,5 @@ public interface Container {
      */
     void transferFrom(Container container);
 
-    ArrayList<Task> getTasks();
-
 }
 

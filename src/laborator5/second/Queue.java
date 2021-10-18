@@ -32,10 +32,15 @@ public class Queue implements Container {
 
     @Override
     public void transferFrom(Container container) {
-            taskList.addAll(container.getTasks());
-//            System.out.println(container.size());
-            container.getTasks().removeAll(taskList);
+
     }
+
+//    @Override
+//    public void transferFrom(Container container) {
+//            taskList.addAll(container.getTasks());
+////            System.out.println(container.size());
+//            container.getTasks().removeAll(taskList);
+//    }
 
     public ArrayList<Task> getTasks() {
         return taskList;
